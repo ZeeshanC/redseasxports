@@ -29,10 +29,6 @@ export class StorageService {
     }
   }
 
-  getToken() {
-    const user = this.get(`${this.vars.user_key}`);
-    return user?.token || false;
-  }
 
   add(name: string, data: any) {
     if (typeof window !== 'undefined') {
@@ -48,21 +44,6 @@ export class StorageService {
         data = JSON.parse(item);
       }
       return data ? data[child] : false;
-    }
-  }
-
-  getParentCauseId() {
-    if (typeof window !== 'undefined') {
-      let user: any = localStorage?.getItem(`${this.vars.user_key}`);
-      if (user) {
-        user = JSON.parse(user);
-      }
-      switch (user?.user?.user_type) {
-        case 'individual':
-          return '20';
-        case 'ngo':
-          return '40';
-      }
     }
   }
 

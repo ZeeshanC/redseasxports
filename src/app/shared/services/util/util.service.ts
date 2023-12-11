@@ -2,30 +2,24 @@ import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { VariableService } from '../variable/variable.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
 import { StorageService } from '../storage/storage.service';
 import { Location, isPlatformBrowser } from '@angular/common';
 import { CookieService } from '../cookie/cookie.service';
 import { Currency } from '../../models/currency-list';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../../environments/environment';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilService {
 
-  currency = new BehaviorSubject<any>(null);
   is_browser: boolean;
   utm_url_string: string = '';
   utm_url_obj: any;
   is_mobile: boolean = false;
   isToken = false;
   public environment = environment; 
-  /** Is Logged In */
-  public isLoggedIn = new BehaviorSubject<any>(false);
-  public isLoggedIn$ = this.isLoggedIn.asObservable();
-  public draft = new Subject<any>();
-  public draft$ = this.draft.asObservable();
   public param = new Subject<any>();
   public param$ = this.param.asObservable();
   constructor(
@@ -70,19 +64,6 @@ export class UtilService {
       this.router.navigate([route], { queryParams: param, queryParamsHandling: 'merge' });
     } else {
       this.location.back();
-    }
-  }
-
-  getCampaignTypeFromId(id: number) {
-    switch (id) {
-      case 20:
-        return 'personal';
-      case 48:
-        return 'ngo';
-      case 49:
-        return 'creative';
-      case 149:
-        return 'ad';
     }
   }
 
@@ -131,37 +112,8 @@ export class UtilService {
     }
   }
 
-  skipSystemEvents() {
-    let temp = false;
-    this.vars.non_sys_events_campaigns.forEach((item: any) => {
-      if (typeof window !== 'undefined' && window.location.pathname.includes(item)) {
-        temp = true;
-      }
-    });
-    return temp;
-  }
-
   removeEmptyFromObject(obj: any) {
     return Object.entries(obj).reduce((o: any, [key, value]) => (value === '' || value === null || value === undefined || value === 'undefined' ? o : (o[key] = value, o)), {});
-  }
-
-  getCurrencyFromCode(code: string) {
-    const currency = this.vars.currencies.find((item: any) => item.code === code);
-    if (currency) {
-      return currency;
-    }
-    if (this.vars.european_countries.includes(code)) {
-      return this.vars.currencies.find(item => item.code === 'EUR');
-    } else if (this.vars.gulf_countries.includes(code)) {
-      return this.vars.currencies.find(item => item.code === 'SAR');
-    } else {
-      return this.vars.currencies.find(item => item.code === 'US');
-    }
-  }
-
-  setCurrency(currency: any) {
-    this.currency.next(currency);
-    this.storage.addSessionData('currency', currency);
   }
 
   isMobile() {
@@ -182,24 +134,6 @@ export class UtilService {
       });
     }
     return temp;
-  }
-
-  /**File upload validation */
-  onFileChange(event: any) {
-    const regEx = /(\.jpg|\.jpeg|\.bmp|\.gif|\.png)$/i;
-    if (event.target.files.length > 0) {
-      const file: File = event.target.files[0];
-      const fileSize = file.size / 1024 / 1024;
-      if (regEx.exec(file.name)) {
-        if (fileSize < 10) {
-          return { message: 'Success', error: false };
-        } else {
-          return { message: 'File size exeeds 10MB', error: true };
-        }
-      } else {
-        return { message: 'Unsupported file format', error: true };
-      }
-    }
   }
 
   detectBrowser(): String {
@@ -227,8 +161,6 @@ export class UtilService {
     } else {
       this.vars.os = 'Unknown';
     }
-    console.log(userAgent);
-    console.log(this.vars.os);
   }
 
   objToUrlString(data: any, param_key?: string) {
@@ -266,10 +198,6 @@ export class UtilService {
 
   async waitingTime(sec = 10) {
     return new Promise((resolve, reject) => { setTimeout(() => { resolve(true); }, sec); });
-  }
-
-  verifyFirebaseOtp(otp: number) {
-    return (<any>window).confirmationResult.confirm(otp);
   }
 
   addCssToGlobal(link:any) {

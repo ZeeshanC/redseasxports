@@ -1,6 +1,5 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
-import { clevertap_script, verloop_script } from './external_js';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +7,6 @@ import { clevertap_script, verloop_script } from './external_js';
 export class ScriptLoaderService {
 
   scripts: any = {
-    'clevertap': {
-      src: clevertap_script,
-      loaded: false,
-    },
     'intl_tel_input': {
       src: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/14.0.7/js/intlTelInput.min.js',
       loaded: false
@@ -24,25 +19,9 @@ export class ScriptLoaderService {
       src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js',
       loaded: false
     },
-    'pusher': {
-      src: `https://cdnjs.cloudflare.com/ajax/libs/pusher/4.3.1/pusher.min.js`,
-      loaded: false
-    },
-    'razor_pay': {
-      src: 'https://checkout.razorpay.com/v1/checkout.js',
-      loaded: false
-    },
-    'razor_pay_card': {
-      src: 'https://checkout.razorpay.com/v1/razorpay.js',
-      loaded: false
-    },
     'google_login': {
       src: 'https://accounts.google.com/gsi/client',
       loaded: false
-    },
-    'verloop': {
-      src: verloop_script,
-      loaded: false,
     },
     'lightgallery': {
       src: 'https://cdn.jsdelivr.net/npm/lightgallery.js@1.1.1/dist/js/lightgallery.min.js',
