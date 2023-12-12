@@ -40,9 +40,6 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:load', [])
   onWindowLoads() {
-    if (this.util.is_browser) {
-      this.script.loadScript('clevertap', '', true);
-    }
   }
 
   getClientIP() {

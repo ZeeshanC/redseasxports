@@ -33,6 +33,13 @@
 						<img src="/assets/images/red-sea-exports-logo.jpg" alt="Red sea Exports" />
 					</a>
 				</div>
+				<div>
+					<button class="menu-button" aria-label="menu-button" mat-icon-button (click)="sidenav.toggle()">
+						<span>
+							<mat-icon>menu</mat-icon>
+						</span>
+					</button>
+				</div>
 			</mat-sidenav-content>
 			<mat-sidenav #sidenav mode="push" position="end">
 				<div class="logo-inside float-left">

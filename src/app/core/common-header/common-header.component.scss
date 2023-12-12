@@ -300,6 +300,11 @@ header {
     overflow-x: hidden;
     overflow-y: hidden;
   }
+	mat-sidenav-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
   mat-drawer-container {
     overflow: visible;
   }
