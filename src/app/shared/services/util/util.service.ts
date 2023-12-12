@@ -110,6 +110,7 @@ export class UtilService {
     if (typeof document !== undefined) {
       return new URLSearchParams(qParamObject).toString();
     }
+    return null;
   }
 
   removeEmptyFromObject(obj: any) {

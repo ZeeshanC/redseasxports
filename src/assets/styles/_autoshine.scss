@@ -1,0 +1,36 @@
+/*Auto Shine for ribbons*/
+.auto-shining:after{
+    opacity: 1;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+    -webkit-animation: shining 2.5s linear infinite;
+    animation: shining 2.5s linear infinite;
+    position: absolute;
+    left: -58px;
+    content: '';
+    z-index: 9;
+    background: url('/images/mi-shine.png') no-repeat 0 0;
+    width: 50px;
+    height: 25px;
+}
+
+@-webkit-keyframes shining {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0)
+    }
+
+    50%,100% {
+        -webkit-transform: translate3d(198px, 0, 0)
+    }
+}
+@keyframes shining {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+
+    50%,100% {
+        -webkit-transform: translate3d(250px, 0, 0);
+        transform: translate3d(250px, 0, 0)
+    }
+}

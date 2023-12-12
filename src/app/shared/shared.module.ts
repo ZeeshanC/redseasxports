@@ -7,13 +7,10 @@ import { VariableService } from './services/variable/variable.service';
 import { ScriptLoaderService } from './services/script-loader/script-loader.service';
 import { StorageService } from './services/storage/storage.service';
 import { UtilService } from './services/util/util.service';
-import { EventService } from './services/event/event.service';
-import { PaymentService } from './services/payment/payment.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CurrencySymbolPipe } from './pipes/currencysymbol/currency.pipe';
 import { CookieService } from './services/cookie/cookie.service';
 import { ApiService } from './services/api/api.service';
-import { AuthService } from './services/auth/auth.service';
 import { AuthGuard } from './guards/auth/auth.guard';
 import { DialogService } from './services/dialog/dialog.service';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -21,10 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 const Services = [
   ApiService,
   AuthGuard,
-  AuthService,
   CookieService,
-  EventService,
-  PaymentService,
   ScriptLoaderService,
   StorageService,
   UtilService,

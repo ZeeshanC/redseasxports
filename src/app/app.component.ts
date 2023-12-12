@@ -7,11 +7,12 @@ import { filter, map, mergeMap } from 'rxjs';
 import { NavigationEnd, RouterOutlet } from '@angular/router';
 import { ScriptLoaderService } from './shared/services/script-loader/script-loader.service';
 import { CommonModule } from '@angular/common';
+import { CommonHeaderComponent } from './core/common-header/common-header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, CommonHeaderComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -47,14 +48,14 @@ export class AppComponent implements OnInit {
   getClientIP() {
     const ip = this.util.storage.getFromSession('iplocation');
     if (!ip) {
-      this.api.get(environment.APP.GET_IP).subscribe({
-        next: (res: any) => {
-          this.setClientIP(res.data);
-        },
-        error: (e) => {
-          console.log(e)
-        }
-      });
+      // this.api.get(environment.APP.GET_IP).subscribe({
+      //   next: (res: any) => {
+      //     this.setClientIP(res.data);
+      //   },
+      //   error: (e) => {
+      //     console.log(e)
+      //   }
+      // });
     } else {
       this.setClientIP(ip);
     }

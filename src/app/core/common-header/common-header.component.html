@@ -1,0 +1,140 @@
+<div appStickyHeader [class]="'topsticky'">
+	<header id="navbar" class="d-none d-lg-block">
+		<div id="navUpdates">
+			<div class="container">
+				<div class="top desktop-menus">
+					<div class="logo float-left">
+						<a (click)="onLogoClick($event)">
+							<img src="/assets/images/red-sea-exports-logo.jpg" alt="Red sea Exports"/>
+						</a>
+					</div>
+					<div class="flex-menus">
+					<div class="primary-menu">
+							<a [routerLink]="['/crowdfunding/fundraisers']">Browse Fundraisers</a>
+							<a href="javascript:void(0)" class="fundraise-for">Fundraise For</a>
+					</div>
+					<div class="login-menu">
+						<span class="menu-spacer"></span>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	</div>
+	
+	<!-- <header id="navbar" class="d-lg-none" [ngClass]="config?.headerClass">
+		<div appStickyHeader [animate]="config?.animateHeader" *ngIf="!isAppUser">
+			<app-module-loader moduleId="download-app-banner" selector="app-download-app-banner"
+												[load]="isMobile && !userData && lastUrlName === '' && vwo.banner_anniversary_AB() && !isAppUser"
+												[inputs]="{ config: {v: 8} }">
+			</app-module-loader>
+			<app-module-loader moduleId="download-app-banner" selector="app-download-app-banner"
+												[load]="isMobile && isAnyActiveSip && lastUrlName === '' && !isAppUser"
+												[inputs]="{ config: {v: 6, title: 'Manage monthly donations'} }">
+			</app-module-loader>
+			<app-module-loader moduleId="download-app-banner" selector="app-download-app-banner"
+												[load]="isMobile && userData && !isAnyActiveSip && variablesService.pageName?.match('home|stories|campaign') && config?.headerClass?.match('download-app-banner') && !isAppUser"
+												[inputs]="{ config: {v: 6, title: 'Track your donations on the go'} }">
+			</app-module-loader>
+		</div>
+		<div class="menus">
+			<mat-sidenav-container class="nav-container">
+				<mat-sidenav-content class="mobile-header" appStickyHeader [animate]="config?.animateHeader" [isHome]="config?.headerClass?.match('homepage-header')" [class]="config?.headerClass || 'topsticky'" [ngClass]="{'pos-rel-header': !config?.animateHeader,'top-110': !userData && vwo.banner_anniversary_AB(), 'top-60': (isAnyActiveSip && isMobile && !isAppUser) || (userData && !isAnyActiveSip && isMobile && config?.headerClass?.match('download-app-banner') && variablesService.pageName?.match('home|stories|campaign'))}">
+					<div class="logo float-left" [ngClass]="['stories','stories_listing'].includes(variablesService.pageName)?'new_year':''">
+						<a [href]= "environment.APP.DOMAIN_URL" (click)="onLogoClick($event)">
+							<img loading="lazy" [src]="logoUrlLight" alt="Ketto – Crowdfunding in India" width="70" height="35"/>
+						</a>
+					</div>
+					<div class="logo float-left" [ngClass]="{'customLogo': isDynamicLogo}" *ngIf="isDynamicLogo">
+						<a (click)="onCustomLogoClick($event)">
+							<img loading="lazy" [src]="customLogoUrl" alt="Campaign Logo" [ngClass]="{'customLogo': isDynamicLogo}" width="70" height="35"/>
+						</a>
+					</div>
+					<a *ngIf="config?.showCurrency" href="javascript:void(0)" class="currency-anchor" [ngClass]="{'l-right': !config?.showProfile}">
+						<ng-template [ngTemplateOutlet]="languageDropdown" *ngIf="availableLangs?.length > 1 && config?.showLanguage"></ng-template>
+					</a>
+					<a *ngIf="config?.showDownloadApp && !isDynamicLogo && !isAnyActiveSip && variablesService.pageName?.match('home|stories|campaign') && !isAppUser" href="javascript:void(0)" class="currency-anchor download-app" [ngClass]="{'l-right': !config?.showProfile}">
+						<ng-template [ngTemplateOutlet]="downloadAppDropdown"></ng-template>
+					</a>
+					<a *ngIf="config?.showCurrency" href="javascript:void(0)" class="currency-anchor" [ngClass]="{'c-right': !config?.showProfile}">
+						<ng-template [ngTemplateOutlet]="currencyDropdown"></ng-template>
+					</a>
+					<button mat-icon-button class="menu-button" *ngIf="variablesService.thirdPartyApp && userData" [matMenuTriggerFor]="phonePeMenu">
+						<mat-icon>menu</mat-icon>
+					</button>
+					<mat-menu #phonePeMenu="matMenu">
+						<a [href]="sipRedirect('mydonations')" mat-menu-item>My Donations</a>
+					</mat-menu>
+					<div class="story-promo-wrapper" *ngIf="this.variablesService?.pageName === 'home' && vwo.story_promo_homeAB()">
+						<app-story-promo-banner [config]="{theme: 'v2'}"></app-story-promo-banner>
+					</div>
+					<button *ngIf="config?.showProfile" class="menu-button" aria-label="menu-button" mat-icon-button (click)="sidenav.toggle()">
+						<span *ngIf="!isLoggedIn">
+							<mat-icon>menu</mat-icon>
+						</span>
+						<span *ngIf="isLoggedIn">
+							<img loading="lazy" class="user-image" [attr.data-src]="userData?.avtar?.cdn_path" [alt]="userData?.full_name" [hidden]="showUserIcon === true"/>
+							<i class="icon-user1" *ngIf="showUserIcon === true"></i>
+						</span>
+					</button>
+				</mat-sidenav-content>
+				<mat-sidenav [hidden]="!config?.showProfile" #sidenav mode="push" position="end">
+					<div class="logo-inside float-left">
+						<img loading="lazy" [src]="logoUrlDark" alt="dark logo" width="70" height="36" />
+					</div>
+					<p><button mat-icon-button (click)="sidenav.close()"><mat-icon class="close-btn">close</mat-icon></button></p>
+					<div class="search-bar">
+						<div class="row search-wrapper d-block d-lg-none d-md-block d-sm-block" *ngIf="config?.showSearch && sidenav?.opened">
+							<app-module-loader moduleId="search-bar" selector="app-search-bar" [load]="true" [outputs]="{ closeSearchBar: closeSearchBarHandler }"></app-module-loader>
+						</div>
+					</div>
+					<div *ngIf="isMobile" class="nudge-container" [ngClass]="{'nudge-close': hideNudge}">
+						<app-nudge-login (hide)="hideNudge=$event"></app-nudge-login>
+					</div>
+					<div *ngIf="userData" class="my-donations">
+						To view fundraisers you have supported on Ketto
+						<a href="javascript:void(0)" (click)="goToMyDonations(loginPopupTemp)" class="word-wrap">Click here</a>
+					</div>
+					<div class="main-menus" [hidden]="searchQuery">
+						<div *ngIf="!userData?.is_hospital">
+							<div *ngIf="userData?.entity_type !== 'ngo'">
+								<p *ngIf="isLoggedIn"><a [href]="environment.manage_domain + '/manage/list'">My Fundraisers</a></p>
+								<p *ngIf="isLoggedIn"><a [href]="sipRedirect('mydonations')">My Donations</a></p>
+								<div *ngIf="isLoggedIn && !exist_sip?.length">
+									<app-component-loader [load]="true" selector="app-sip-hamburger"></app-component-loader>
+								</div>
+								<p *ngIf="isLoggedIn"><a [href]="isMemorialSip && !isAnyActiveSip?'/new/thankyou?or=sps&sip_cause=memorial':'/new/portfolio'" (click)="sendSystemEvent()">{{isAnyActiveSip?'My SIP Dashboard':'View My Impact'}}</a></p>
+	
+							</div>
+							<p *ngIf="userData?.entity_type === 'ngo'">
+								<a href="/ngo/dashboard/ngo-dashboard.php">View Dashboard</a>
+							</p>
+						</div>
+						<p *ngIf="isLoggedIn && !userData?.is_hospital">
+							<a *ngIf="checkForManageFr()" [href]="environment.manage_domain + '/manage/'+variablesService?.fundraiser?.id + '/dashboard'" >Manage Campaign</a>
+						</p>
+						<p *ngIf="userData?.is_hospital">
+							<a href="/manage/index.html#!/">View Dashboard</a>
+						</p>
+						<p><a [routerLink]="['/crowdfunding/fundraisers']" (click)="sidenav.close()">Browse Fundraisers</a></p>
+						<input type="checkbox" class="checkbox" id="showall">
+						<p class="fundraise-for"><a href="javascript:void(0)" [matMenuTriggerFor]="fundraise_for">Fundraise For <mat-icon class="arrow-down">arrow_drop_down</mat-icon></a></p>
+						<mat-menu #fundraise_for="matMenu">
+							<button mat-menu-item *ngFor="let cause of variablesService.frCauses" (click)="startFrFor(cause)">{{ cause?.label }}</button>
+						</mat-menu>
+						<div *ngIf="!isLoggedIn && !exist_sip?.length">
+							<app-component-loader [load]="true" selector="app-sip-hamburger"></app-component-loader>
+						</div>
+						<p><a [routerLink]="['/crowdfunding']" (click)="sidenav.close()">How It Works</a></p>
+						<p><a (click)="whatsappChat()" [href]="'https://api.whatsapp.com/send?phone=91' + variablesService.contactUsMobNumber" target="_blank" rel="noopener">Get us on Whatsapp</a></p>
+						<p><a href="javascript:void(0)" (click)="openLoginPopup(loginPopupTemp)" *ngIf="!isLoggedIn">Sign In</a></p>
+						<p *ngIf="isLoggedIn && !utilService.isApp()"><a href="javascript:void(0)" (click)="logout();sidenav.close();">Logout</a></p>
+					</div>
+					<div class="start-btn-wrapper" [hidden]="searchQuery" [ngClass]="{'button-docked': !isLoggedIn, 'button-undocked': isLoggedIn}">
+						<a (click)="pushHeaderButton('campaign/start_campaign.php', $event)" href="javascript:void(0)" class="start-btn" mat-button>START A FUNDRAISER</a>
+					</div>
+				</mat-sidenav>
+			</mat-sidenav-container>
+		</div>
+	</header> -->

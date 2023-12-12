@@ -1,0 +1,568 @@
+
+
+.pos-rel-header {
+  position: relative !important;
+}
+.impact-header {
+  box-shadow: none !important;
+  background: none;
+  position: absolute !important;
+  width: 100%;
+  z-index: 10;
+  .nav-container {
+    box-shadow: none !important;
+  }
+}
+.login-page-header {
+  .login-menu,
+  .fundraise-for {
+    display: none;
+  }
+}
+.homepage-header {
+  top: 0;
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  transition: transform 0.25s ease-in-out;
+  box-shadow: none !important;
+  background: transparent;
+  &.top-60{
+    top: 60px;
+  }
+  &.top-110{
+    top: 65px;
+  }
+  .desktop-menus {
+    a,
+    .mat-icon {
+      color: #ffffff;
+    }
+  }
+  .logo {
+    background: url('https://kettocdn.gumlet.io/images/logo-light-bg.svg') no-repeat;
+    display: block;
+    padding: 0;
+    z-index: 1;
+    position: relative;
+    width: auto;
+    background-size: contain;
+    img {
+      opacity: 1 !important;
+    }
+  }
+  .logo.new_year {
+    background: none;
+    img {
+      opacity: 1 !important;
+    }
+  }
+  .toolbar-currency {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+  }
+  .currency-select,
+  .mat-icon.material-icons {
+    // color: #fff;
+    color: #444444;
+
+  }
+  .nav-container {
+    box-shadow: none;
+  }
+}
+header {
+  .icon-user1 {
+    font-size: 28px;
+    vertical-align: middle;
+  }
+  .trusted-line {
+    font-size: 17px;
+    margin-top: 14px;
+    color: #444444;
+  }
+  .currency-switcher {
+    display: inline-block;
+  }
+  .flex-menus {
+    margin-top: 14px;
+  }
+  .desktop-menus {
+    padding: 25px 50px;
+    position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: #eff5fa;
+    a {
+      font-size: 16px;
+      margin-right: 18px;
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
+    .mat-icon {
+      vertical-align: middle;
+    }
+  }
+  .primary-menu {
+    margin-left: 18px;
+    float: left;
+  }
+  .login-menu,
+  .loggedin-profile {
+    float: right;
+  }
+  .loggedin-profile {
+    .mat-chip-list {
+      .mat-chip {
+        padding: 0;
+        margin-top: 0 !important;
+        .user-image {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  .main-menus a,
+  select.currency-select {
+    color: #444444;
+  }
+  .user-image {
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+.topsticky {
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.08) !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  z-index: 10;
+  background: #ffffff;
+  .logo {
+    img {
+      opacity: 1;
+			max-width: 130px;
+			width: 100%;
+    }
+  }
+  a,
+  select.currency-select,
+  .mat-icon {
+    color: #444444 !important;
+  }
+}
+.homepage-header.header-unpin.topsticky {
+  height: 0;
+  box-shadow: none !important;
+  -webkit-transform: translateY(-80px);
+  -ms-transform: translateY(-80px);
+  transform: translateY(-80px);
+}
+.header-pin.topsticky {
+  background: #ffffff;
+  transition: transform 0.25s ease-in-out;
+  &.transparent-bg {
+    background: #fff;
+  }
+  &.top-60{
+    top: 0px;
+  }
+  &.top-110{
+    top: 0px;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .topsticky {
+    background: #ffffff;
+  }
+  header {
+    height: 75px;
+    .logo {
+      float: left;
+      margin-right: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+    }
+  }
+  .user-image {
+    margin-left: 10px;
+  }
+  .loggedin-profile {
+    .mat-icon {
+      vertical-align: middle;
+    }
+  }
+  .primary-menu,
+  .topsticky .primary-menu {
+    float: left;
+  }
+  .login-menu {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    margin-top: -5px;
+  }
+  .manage-campaign-link {
+    display: none;
+  }
+  .manage-campaign-btn {
+    display: none;
+    position: absolute;
+    right: -85px;
+    button {
+      border-radius: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary-color);
+      line-height: 27px;
+      border-color: 1px solid var(--primary-color);
+    }
+  }
+  .secure-tag {
+    display: inline-flex;
+    align-items: center;
+    margin-top: -8px;
+    vertical-align: middle;
+    .secure-txt {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333333;
+      margin: 2px 0px 0px 6px;
+    }
+  }
+  .my-donations {
+    background: #f5f5f5;
+    padding: 10px 10rem;
+    a {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+  }
+  .search-ketto {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    line-height: 22px;
+  }
+  /*Revamped header*/
+  .white-bg {
+    background: #ffffff;
+    a {
+      color: #444444 !important;
+    }
+    .logo {
+      img {
+        opacity: 1;
+      }
+    }
+    .desktop-menus .mat-icon {
+      color: #444444;
+    }
+    .start-a-fundraiser {
+      border: 2px solid var(--primary-color) !important;
+      box-sizing: border-box;
+      border-radius: 4px !important;
+      color: var(--primary-color) !important;
+      font-weight: bold;
+      font-size: 17px !important;
+      background: white !important;
+    }
+    .toolbar-currency {
+      background-color: #f5f5f5 !important;
+      color: #333 !important;
+      border: 2px solid #f5f5f5 !important;
+    }
+
+    &.transparent-bg {
+      background: transparent;
+    }
+  }
+}
+.my-donations a {
+  color: var(--primary-color);
+}
+@media (max-width: 991px) {
+  .mobile-header,
+  header {
+    height: 65px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  mat-drawer-container {
+    overflow: visible;
+  }
+  ::ng-deep .mat-drawer-inner-container {
+    min-height: 500px !important;
+    position: relative !important;
+  }
+  mat-sidenav {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    .close-btn {
+      color: #444444 !important;
+    }
+  }
+  .nav-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: 0 0;
+    overflow: visible;
+    height: 60px;
+    z-index: 10;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.08);
+    .logo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+    }
+    .story-promo-wrapper {
+      position: absolute;
+      right: 52px;
+      top: 8px;
+    }
+  }
+  .mat-icon-button {
+    float: right;
+    margin-right: 5px;
+    margin-top: 9px;
+    line-height: 28px;
+    .mat-icon.material-icons {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 0 auto;
+      justify-content: center;
+    }
+  }
+  .search-bar {
+    padding: 80px 18px 0 18px;
+    .search-wrapper {
+      display: block;
+    }
+  }
+  .currency-anchor {
+    position: absolute;
+    right: 50px;
+    top: 13px;
+  }
+  .download-app {
+    right: 120px;
+    z-index: 1;
+  }
+  .c-right {
+    right: 8px !important;
+  }
+  .l-right {
+    right: 80px !important;
+  }
+  .nudge-container {
+    padding: 18px;
+  }
+  .nudge-close {
+    padding: 9px;
+  }
+  .my-donations {
+    padding: 18px;
+    padding-top: 0px;
+  }
+  .main-menus {
+    font-size: 17px;
+    font-weight: 600;
+    color: #444;
+    line-height: 30px;
+    display: block;
+    padding: 8px 18px;
+  }
+  .menus .checkbox {
+    display: none;
+  }
+  .start-btn {
+    border-radius: 42px;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px 0 rgba(1, 191, 189, 0.4);
+    display: block;
+    color: #fff !important;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 8px 60px;
+    width: 260px;
+  }
+  .currency-chip {
+    height: 31px;
+    border-radius: 15.5px;
+    padding: 0px;
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    .currency-select {
+      width: 62px;
+      padding: 0 7px;
+      position: relative;
+      z-index: 1;
+      border: none;
+      background-color: transparent;
+      &:focus {
+        outline: none;
+      }
+    }
+    .language-select {
+      width: 83px;
+      padding: 0 7px;
+      position: relative;
+      z-index: 1;
+      border: none;
+      background-color: transparent;
+      &:focus {
+        outline: none;
+      }
+    }
+    .icon {
+      position: absolute;
+      right: 5px;
+    }
+  }
+  .logo {
+    margin: 10px 15px;
+  }
+  .logo-inside {
+    img {
+      width: 70px;
+      margin: 5px 15px;
+    }
+  }
+  .button-docked {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .fundraise-for .arrow-down {
+    color: #444 !important;
+    vertical-align: middle;
+    float: right;
+  }
+}
+.menu-item,
+.icon-size {
+  // font-family: 'Source Sans Pro', sans-serif !important;
+}
+.whatsapp-btn {
+  color: #25d366;
+  i:before {
+    margin-right: 5px;
+    color: #25d366;
+  }
+}
+.mat-menu-item:hover {
+  color: var(--primary-color);
+}
+hr.custom-hr {
+  height: 1px;
+  border: none;
+  background-color: #d8d8d8;
+}
+.my-donations {
+  font-size: 17px;
+  line-height: 27px;
+  color: #444;
+}
+.search-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  .search-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background-color: rgba(51, 51, 51, 0.45);
+    overflow-y: scroll;
+  }
+  .grid-container {
+    padding-right: 8rem;
+    padding-left: 8em;
+    padding-top: 50px;
+  }
+  .close-button,
+  .close-button.medium {
+    right: 1rem;
+    top: 0.5rem;
+    font-size: 2em;
+    line-height: 1;
+    position: absolute;
+    color: #666;
+    cursor: pointer;
+  }
+  .search-holder {
+    background: white;
+    position: relative;
+    z-index: 1006;
+  }
+  .pos-rel {
+    position: relative;
+    display: flex;
+    padding-bottom: 30px;
+    .mat-icon {
+      position: relative;
+      top: 5px;
+      color: var(--primary-color);
+    }
+    .google-media-search {
+      flex: 1;
+    }
+    svg {
+      position: absolute;
+      top: 10px;
+      fill: var(--primary-color);
+    }
+  }
+}
+::ng-deep {
+  header {
+    .logged-in-user.mat-standard-chip {
+      min-height: 36px;
+    }
+    .mat-chip.mat-standard-chip:focus {
+      box-shadow: none;
+    }
+    .mat-standard-chip:focus::after {
+      opacity: 0 !important;
+    }
+    .mat-menu-panel {
+      border-radius: 10px !important;
+    }
+    .loggedin-profile .mat-chip.mat-standard-chip {
+      border: 0 !important;
+      background: transparent !important;
+    }
+  }
+  .mat-menu-item {
+    line-height: 28px !important;
+    height: 30px !important;
+    font-size: 17px;
+  }
+}

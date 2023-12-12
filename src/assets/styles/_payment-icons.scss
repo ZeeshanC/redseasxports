@@ -1,0 +1,162 @@
+.payment-icons {
+  background-image: url('/assets/images/payment/payment-icons.png');
+  background-size: 34px auto;
+  background-repeat: no-repeat;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  vertical-align: middle;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.payment-icons-v1 {
+  height: 36px;
+  width: 36px;
+  border: 1px solid #E1E1E1;
+}
+
+.OP_CARD {
+  @extend .payment-icons;
+  background-position: 0px -578px;
+}
+
+.OP_NB {
+  @extend .payment-icons;
+  background-position: 0px -544px;
+}
+
+.OP_UPI {
+  @extend .payment-icons;
+  background-position: 0px -136px;
+}
+
+.OP_WALLET {
+  @extend .payment-icons;
+  background-position: 0px -510px;
+}
+
+.other-bank {
+  @extend .payment-icons;
+  background-position: 0px -545px;
+}
+.VPA, .other-upi {
+  @extend .payment-icons;
+  background-position: 0px -136px;
+}
+
+.VISA {
+  @extend .payment-icons;
+  background-position: 0px -170px;
+}
+.MASTER, .MASTERCARD {
+  @extend .payment-icons;
+  background-position: 0px -204px;
+}
+.MX {
+  @extend .payment-icons;
+  background-position: 0px -272px;
+}
+.MAESTRO {
+  @extend .payment-icons;
+  background-position: 0px -306px;
+}
+.RUPAY {
+  @extend .payment-icons;
+  background-position: 0px -238px;
+}
+
+.NB_AXIS {
+  @extend .payment-icons;
+  background-position: 0px -374px;
+}
+.NB_HDFC {
+  @extend .payment-icons;
+  background-position: 0px -340px;
+}
+.NB_ICICI {
+  @extend .payment-icons;
+  background-position: 0px -442px;
+}
+.NB_KOTAK {
+  @extend .payment-icons;
+  background-position: 0px -476px;
+}
+.NB_SBI, .SBI {
+  @extend .payment-icons;
+  background-position: 0px -408px;
+}
+.NB_CANR {
+  @extend .payment-icons;
+  background-position: 0px -783px;
+}
+
+.GOOGLEPAY {
+  @extend .payment-icons;
+  background-position: 0px -35px;
+}
+.PHONEPE {
+  @extend .payment-icons;
+  background-position: 0px -68px;
+}
+.WHATSAPP {
+  @extend .payment-icons;
+  background-position: 0px -102px;
+}
+.BHIM {
+  @extend .payment-icons;
+  background-position: 0px -136px;
+}
+.PAYTM {
+  @extend .payment-icons;
+  background-position: 0px 0px;
+}
+.OTHER {
+  @extend .payment-icons;
+  background-position: 0px -510px;
+}
+
+.MOBIKWIK {
+  @extend .payment-icons;
+  background-position: 0px -715px;
+}
+.AMAZONPAY {
+  @extend .payment-icons;
+  background-position: 0px -682px;
+}
+.FREECHARGE {
+  @extend .payment-icons;
+  background-position: 0px -748px;
+}
+.OLAMONEY {
+  @extend .payment-icons;
+  background-position: 0px -510px;
+}
+.JIOMONEY {
+  @extend .payment-icons;
+  background-position: 0px -510px;
+}
+.AIRTELMONEY {
+  @extend .payment-icons;
+  background-position: 0px -510px;
+}
+.PAYZAPP {
+  @extend .payment-icons;
+  background-position: 0px -510px;
+}
+.OXIGEN {
+  @extend .payment-icons;
+  background-position: 0px -510px;
+}
+.YESPAY {
+  @extend .payment-icons;
+  background-position: 0px -510px;
+}
+.YPAYCASH {
+  @extend .payment-icons;
+  background-position: 0px -510px;
+}
+.PAYCASH {
+  @extend .payment-icons;
+  background-position: 0px -510px;
+}
+
