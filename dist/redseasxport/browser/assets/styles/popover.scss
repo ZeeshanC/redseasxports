@@ -1,0 +1,40 @@
+.popover-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 2px;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  color: #fff;
+  width: 200px;
+  padding: 24px 16px;
+  word-wrap: break-word;
+  .p-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 17px;
+  }
+  .p-desc {
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .p-desc-list {
+    ol {
+      padding-inline-start: 20px;
+    }
+  }
+  .p-eg {
+    margin-top: 5px;
+    // font-weight: bold;
+    // font-style: italic;
+    line-height: 1.5;
+  }
+}
+.editor-popover{
+  .popover-container {
+    width: 290px;
+  }
+}
+

@@ -1,0 +1,46 @@
+.faqs.portfolio {
+ ::ng-deep .accordian{
+    border: 1px solid #eee;
+    margin: 0 0px;
+    border-radius: 10px;
+    .full-width{
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+    .pannel-header{
+      padding: 11px 0 11px !important;
+      border-top: 1px solid #f5f5f5;
+    }
+    .mat-expansion-panel-spacing{
+      margin: 0;
+    }
+    .mat-expansion-panel-body{
+      padding: 0 21px 0;
+      margin-top: -11px;
+    }
+    .mat-icon{
+      position: absolute;
+      right: 6px;
+      color: #01bfbd;
+      font-size: 20px;
+      line-height: 32px;
+      width: 32px;
+      height: 32px;
+    }
+    .title{
+      font-weight: normal !important;
+    }
+    .desc{
+      margin: 10px -20px;
+      color: #999 !important;
+    }
+  }
+  .mat-expansion-panel-spacing{
+    margin: 0;
+  }
+  @media (max-width: 768px){
+    .mat-expansion-panel-body{
+      width: 268px;
+    }
+  }
+}
