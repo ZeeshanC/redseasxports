@@ -1,4 +1,4 @@
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import '../../../assets/styles/variables';
 
 .pos-rel-header {
   position: relative !important;
@@ -40,7 +40,6 @@
     }
   }
   .logo {
-    background: url('https://kettocdn.gumlet.io/images/logo-light-bg.svg') no-repeat;
     display: block;
     padding: 0;
     z-index: 1;
@@ -320,6 +319,9 @@ header {
       color: #444444 !important;
     }
   }
+	.menu-button {
+		margin-right: 10px;
+	}
   .nav-container {
     position: absolute;
     top: 0;
