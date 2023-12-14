@@ -303,6 +303,7 @@ header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		background: #eff5fa !important;
 	}
   mat-drawer-container {
     overflow: visible;
@@ -315,6 +316,7 @@ header {
     width: 100%;
     position: fixed;
     z-index: 1000;
+		background: #eff5fa !important;
     .close-btn {
       color: #444444 !important;
     }
