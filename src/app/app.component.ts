@@ -2,17 +2,18 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { ICLientData } from './shared/models/client.model';
 import { UtilService } from './shared/services/util/util.service';
 import { ApiService } from './shared/services/api/api.service';
-import { environment } from '../environments/environment';
 import { filter, map, mergeMap } from 'rxjs';
 import { NavigationEnd, RouterOutlet } from '@angular/router';
 import { ScriptLoaderService } from './shared/services/script-loader/script-loader.service';
 import { CommonModule } from '@angular/common';
 import { CommonHeaderComponent } from './core/common-header/common-header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './core/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, CommonHeaderComponent],
+  imports: [CommonModule, RouterOutlet, CommonHeaderComponent, HttpClientModule, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

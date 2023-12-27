@@ -1,0 +1,15 @@
+<div class="banner">
+  <ngx-slick-carousel [config]="slickConfig">
+    @for (slide of gallery; track slide.img) {
+    <div ngxSlickItem class="slide">
+      <div class="img">
+        <img src="{{ slide.img }}" alt="" width="100%">
+      </div>
+      <div class="text-content">
+        <div class="title">Discover the Finest Tobacco Selections at Red Sea Exports - Elevate Your Smoking Experience Today!</div>
+        <div class="text">{{slide?.text}}</div>
+      </div>
+    </div>
+    }
+  </ngx-slick-carousel>
+</div>

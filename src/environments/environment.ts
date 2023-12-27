@@ -3,6 +3,7 @@ import { API_URLS } from './api-urls';
 export const environment = {
   name: 'local',
   production: false,
+  server_url: 'http://localhost:3000',
   firebase: {
     apiKey: 'AIzaSyATJLhlswzu0dRFoWfP-Xcp4G_pE_Kzlpk',
     authDomain: 'ketto-login.firebaseapp.com',

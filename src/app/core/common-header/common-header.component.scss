@@ -3,6 +3,9 @@
 .pos-rel-header {
   position: relative !important;
 }
+.container {
+  max-width: 100%;
+}
 .impact-header {
   box-shadow: none !important;
   background: none;
@@ -86,7 +89,7 @@ header {
     display: inline-block;
   }
   .flex-menus {
-    margin-top: 14px;
+    // margin-top: 14px;
   }
   .desktop-menus {
     padding: 25px 50px;
@@ -138,7 +141,7 @@ header {
 }
 .topsticky {
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.08) !important;
-  position: fixed;
+  // position: fixed;
   top: 0;
   width: 100%;
   margin: 0;
@@ -184,7 +187,7 @@ header {
     background: #ffffff;
   }
   header {
-    height: 75px;
+    // height: 75px;
     .logo {
       float: left;
       margin-right: 20px;
